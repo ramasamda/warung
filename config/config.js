@@ -1,0 +1,28 @@
+require('dotenv').config(); // baca .env
+
+module.exports = {
+  development: {
+    username: 'postgres',
+    password: 'ramailhami',
+    database: 'resign1',
+    host: '127.0.0.1',
+    dialect: 'postgres'
+  },
+  test: {
+    username: 'postgres',
+    password: 'your_test_password',
+    database: 'test_database',
+    host: '127.0.0.1',
+    dialect: 'postgres'
+  },
+  production: {
+    use_env_variable: 'DATABASE_URL',
+    dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
+  }
+};
